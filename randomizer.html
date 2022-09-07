@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		body, html {
+			padding: 0;
+			margin: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			font-family: Arial;
+		}
+
+		#form {
+			display: flex;
+			flex-direction: column;
+			width: 20%;
+		}
+
+		.formitem {
+			margin-top: 10px;
+		}
+
+		#form span {
+			margin-right: 10px;
+		}
+
+		#result {
+			margin-top: 10px;
+		}
+
+	</style>
+</head>
+<body>
+	<form id="form">
+		<div><span>Opção 1</span><input id="option1" class="formitem" type="text" name=""></div>
+		<div><span>Opção 2</span><input id="option2" class="formitem" type="text" name=""></div>
+		<input id="submit" class="formitem" type="button" name="" value="random">
+	</form>
+	<span id="result"></span>
+
+	<script type="text/javascript">
+		const submit = document.querySelector('#submit')
+		const result = document.querySelector('#result')
+		const op1 = document.querySelector('#option1')
+		const op2 = document.querySelector('#option2')
+
+		submit.addEventListener('click', () => {
+			let options = [op1.value, op2.value]
+			result.innerHTML = 'Resultado: '+options[Math.floor(Math.random() * 2)]
+		})
+	</script>
+</body>
+</html>
